@@ -3,7 +3,6 @@ import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import { useHistory } from "react-router";
 import { Link, useLocation } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 // bug reporting dependencies
 import { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
@@ -17,17 +16,17 @@ import HomePage from "./HomePage";
 const Header = () => {
     return(
         <Navbar bg="dark" expand="lg" variant="dark">
-            <div>
-            <Container>
-                <Navbar.Brand href="/">Ian's Home Page</Navbar.Brand>
+            <div class="row">
+                <Navbar.Collapse class="navbar-collapse collapse">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link as={Link} to={"/Contact"}>Contact</Nav.Link>
-                        <Nav.Link as={Link} to={"/AboutMe"}>AboutMe</Nav.Link>
+                    <Nav class="col-md-6 me-auto">
+                        <Nav.Link class="col-md-6" style={{fontWeight: "bold", fontSize: 25, color: "grey", marginRight: 40}} as={Link} to={"/Contact"}>Contact</Nav.Link>
+                        <Nav.Link class="col-md-6" style={{fontWeight: "bold", fontSize: 25, color: "grey", marginRight: 40}} as={Link} to={"/AboutMe"}>AboutMe</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
-            </Container>
+            </div>
+            <div className="center">
+                <Navbar.Brand class="navbar-brand" style={{ marginLeft: 500, color: "Teal", fontSize:"50px", fontWeight: "bold"}} href="/">Ian's Home Page</Navbar.Brand>
             </div>
         </Navbar>
     );

@@ -11,6 +11,7 @@ import {
   Routes,
   Redirect
 } from 'react-router-dom';
+import background from './components/assets/coding-02.png';
 
 
 
