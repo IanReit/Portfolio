@@ -10,24 +10,33 @@ import Card from 'react-bootstrap/Button';
 import Button from 'react-bootstrap/Button';
 import AboutMe from "./AboutMe";
 import Contact from "./Contact";
+import { Row, Col } from "react-bootstrap";
 import HomePage from "./HomePage";
 
 
 const Header = () => {
     return(
         <Navbar bg="dark" expand="lg" variant="dark">
-            <div class="row">
+            <Container class="row">
                 <Navbar.Collapse class="navbar-collapse collapse">
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Nav class="col-md-6 me-auto">
-                        <Nav.Link class="col-md-6" style={{fontWeight: "bold", fontSize: 25, color: "grey", marginRight: 40}} as={Link} to={"/Contact"}>Contact</Nav.Link>
-                        <Nav.Link class="col-md-6" style={{fontWeight: "bold", fontSize: 25, color: "grey", marginRight: 40}} as={Link} to={"/AboutMe"}>AboutMe</Nav.Link>
+                <Row>
+                    <Nav>
+                        <Col>
+                            <Nav.Link class="col-md-6" style={{fontWeight: "bold", fontSize: 25, color: "grey"}} as={Link} to={"/Contact"}>Contact</Nav.Link>
+                        </Col>
+                        <Col>
+                            <Nav.Link class="col-md-6" style={{fontWeight: "bold", fontSize: 25, color: "grey"}} as={Link} to={"/AboutMe"}>AboutMe</Nav.Link>
+                        </Col>
                     </Nav>
+                </Row>
                 </Navbar.Collapse>
-            </div>
-            <div className="center">
-                <Navbar.Brand class="navbar-brand" style={{ marginLeft: 500, color: "Teal", fontSize:"50px", fontWeight: "bold"}} href="/">Ian's Home Page</Navbar.Brand>
-            </div>
+            </Container>
+            <Container>
+                    <Col>
+                    <Navbar.Brand class="navbar-brand" style={{marginRight: 780, color: "Teal", fontSize:"50px", fontWeight: "bold"}} href="/">Home</Navbar.Brand>
+                    </Col>
+            </Container>
         </Navbar>
     );
 }
